@@ -14,7 +14,7 @@ app.post('/newMessage',async(req,res)=>{
         return res.end()
     }
 
-    await axios.post(`https://api.telegram.org/${process.env.TOKEN}/sendMessage`,{
+    await axios.post(`https://api.telegram.org/bot${process.env.TOKEN}/sendMessage`,{
         chat_id : message.chat.id,
         text : "Salaam!!"
 }).then(res=>{
